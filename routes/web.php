@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LihatNilaiController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PagenotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +41,8 @@ Route::get('/nilai', function () {
 Route::get('/daftarnilai', function () {
     return view('coba.daftar');
 });
+//routing manggil dari class controller
+Route::get('/datamahasiswa', [LihatNilaiController::class, 'dataMahasiswa']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/notfound', [PagenotController::class, 'index']);
